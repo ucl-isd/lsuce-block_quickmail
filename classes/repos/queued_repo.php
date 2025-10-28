@@ -217,7 +217,8 @@ class queued_repo extends repo implements queued_repo_interface {
 
         foreach ($syncthese as $cmsg) {
             $zeemsg = new message($cmsg->message_id);
-            if (($zeemsg->get('to_send_at') <= $now) && ($zeemsg->get('user_id') != null)) {
+            if ($zeemsg->get('to_send_at') <= $now) {
+
                 $zeemsg->populate_recip_course_msg();
                 $DB->update_record(
                     'block_quickmail_msg_course',
