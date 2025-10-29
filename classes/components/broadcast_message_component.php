@@ -29,6 +29,9 @@ use block_quickmail\components\component;
 
 class broadcast_message_component extends component implements \renderable {
     public $broadcastform;
+    private string $heading;
+    private mixed $broadcast_form;
+
     public function __construct($params = []) {
         parent::__construct($params);
         $this->broadcast_form = $this->get_param('broadcast_form');

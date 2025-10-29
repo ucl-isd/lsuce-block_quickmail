@@ -41,6 +41,9 @@ class migrator {
     public static $draftrecipienttable = 'block_quickmail_draft_recips';
     public static $messagerecipienttable = 'block_quickmail_msg_recips';
     public static $additionalemailtable = 'block_quickmail_msg_ad_email';
+    private int $migrated_count;
+    private int $chunk_size;
+    private $site_id;
 
     public function __construct() {
         global $DB;

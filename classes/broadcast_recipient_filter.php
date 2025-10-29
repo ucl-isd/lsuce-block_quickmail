@@ -76,6 +76,14 @@ class block_quickmail_broadcast_recipient_filter {
         'middlename' => 1,
         'alternatename' => 1
     ];
+    private int $result_user_count;
+    private array $display_users;
+    private array $result_users;
+    private mixed $filter_result_params;
+    private mixed $filter_result_sql;
+    private mixed $draft_message;
+    private array $extra_params;
+    private array $filter_params;
 
     /**
      * Construct a wrapper instance for moodle's user_filtering class
@@ -93,8 +101,8 @@ class block_quickmail_broadcast_recipient_filter {
 
         // In user/filters/lib.php  this variable $SESSION->user_filtering
         // sometimes is set to '' which causes an error. Instead of changing core from
-        // if (!isset($SESSION->user_filtering) to the what's below I'll do that 
-        // check here right before the call. 
+        // if (!isset($SESSION->user_filtering) to the what's below I'll do that
+        // check here right before the call.
         if (!isset($SESSION->user_filtering) || $SESSION->user_filtering == '') {
             $SESSION->user_filtering = array();
         }
