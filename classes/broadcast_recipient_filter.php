@@ -76,14 +76,14 @@ class block_quickmail_broadcast_recipient_filter {
         'middlename' => 1,
         'alternatename' => 1
     ];
-    private int $result_user_count;
-    private array $display_users;
-    private array $result_users;
-    private mixed $filter_result_params;
-    private mixed $filter_result_sql;
-    private mixed $draft_message;
-    private array $extra_params;
-    private array $filter_params;
+    public int $result_user_count;
+    public array $display_users;
+    public array $result_users;
+    public mixed $filter_result_params;
+    public mixed $filter_result_sql;
+    public mixed $draft_message;
+    public array $extra_params;
+    public array $filter_params;
 
     /**
      * Construct a wrapper instance for moodle's user_filtering class

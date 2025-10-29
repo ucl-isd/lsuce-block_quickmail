@@ -28,6 +28,7 @@ defined('MOODLE_INTERNAL') || die();
 require_once($CFG->libdir . '/formslib.php');
 
 use block_quickmail\forms\concerns\is_quickmail_form;
+use block_quickmail\persistents\message;
 use block_quickmail_string;
 use block_quickmail_config;
 use block_quickmail\persistents\signature;
@@ -44,10 +45,10 @@ class broadcast_message_form extends \moodleform {
     public $userdefaultsignatureid;
     public $courseconfigarray;
     public $draftmessage;
-    private mixed $draft_message;
-    private mixed $course_config_array;
-    private mixed $user_default_signature_id;
-    private mixed $user_signature_array;
+    public mixed $draft_message;
+    public mixed $course_config_array;
+    public mixed $user_default_signature_id;
+    public mixed $user_signature_array;
 
     /**
      * Instantiates and returns a compose message form

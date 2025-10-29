@@ -33,8 +33,8 @@ class calculation_exception extends \Exception {
     /**
      * @var mixed|null
      */
-    private mixed $user_id;
-    private mixed $course_id;
+    public mixed $user_id;
+    public mixed $course_id;
 
     public function __construct($message, $courseid, $userid = null) {
         $this->message = $message;
